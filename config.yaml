@@ -1,0 +1,14 @@
+baseURL: http://localhost
+languageCode: en-us
+title: Zettelkasten
+pluralizelisttitles: false
+relativeURLs: true
+theme: hugo-kb
+markup:
+    defaultMarkdownHandler: goldmark
+    highliglt:
+        codeFences: true
+    goldmark:
+        extensions:
+            footnote: true
+            linkify: true
