@@ -1,1 +1,3 @@
-# Nota dentro de uma pasta
+---
+title: Nota dentro de uma pasta
+---
