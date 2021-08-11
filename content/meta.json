@@ -1,0 +1,102 @@
+{
+  "SUMMARY": {
+    "basename": "SUMMARY",
+    "extension": "md",
+    "name": "SUMMARY.md",
+    "path": "SUMMARY.md",
+    "ctime": 1628255373380,
+    "mtime": 1628255385001,
+    "referencedBy": [
+      "SUMMARY.md"
+    ]
+  },
+  "_index": {
+    "basename": "_index",
+    "extension": "md",
+    "name": "_index.md",
+    "path": "_index.md",
+    "ctime": 1628249320194,
+    "mtime": 1628250183136,
+    "referencedBy": [
+      "SUMMARY.md"
+    ]
+  },
+  "inicio": {
+    "basename": "inicio",
+    "extension": "md",
+    "name": "inicio.md",
+    "path": "inicio.md",
+    "ctime": 1628247591592,
+    "mtime": 1628247591592,
+    "referencedBy": [
+      "ref.md",
+      "SUMMARY.md"
+    ]
+  },
+  "ref": {
+    "basename": "ref",
+    "extension": "md",
+    "name": "ref.md",
+    "path": "ref.md",
+    "ctime": 1628247969637,
+    "mtime": 1628247969637,
+    "referencedBy": [
+      "SUMMARY.md"
+    ]
+  },
+  "com espaco/_index": {
+    "basename": "_index",
+    "extension": "md",
+    "name": "_index.md",
+    "path": "com espaco/_index.md",
+    "ctime": 1628247750687,
+    "mtime": 1628247750688,
+    "referencedBy": [
+      "ref.md",
+      "SUMMARY.md"
+    ]
+  },
+  "dir/_index": {
+    "basename": "_index",
+    "extension": "md",
+    "name": "_index.md",
+    "path": "dir/_index.md",
+    "ctime": 1628247504686,
+    "mtime": 1628250430795,
+    "referencedBy": [
+      "SUMMARY.md"
+    ]
+  },
+  "dir/inicio": {
+    "basename": "inicio",
+    "extension": "md",
+    "name": "inicio.md",
+    "path": "dir/inicio.md",
+    "ctime": 1628247631537,
+    "mtime": 1628247631537,
+    "referencedBy": [
+      "SUMMARY.md"
+    ]
+  },
+  "❤ com emoji/_index": {
+    "basename": "_index",
+    "extension": "md",
+    "name": "_index.md",
+    "path": "❤ com emoji/_index.md",
+    "ctime": 1628247922535,
+    "mtime": 1628247922535,
+    "referencedBy": [
+      "ref.md",
+      "SUMMARY.md"
+    ]
+  },
+  "Contrato": {
+    "basename": "Contrato",
+    "extension": "md",
+    "name": "Contrato.md",
+    "path": "Contrato.md",
+    "ctime": 1628711017797,
+    "mtime": 1628711470409,
+    "referencedBy": []
+  }
+}
