@@ -1,0 +1,3 @@
+[submodule "hugo-kb"]
+    path = themes/hugo-kb
+    url = https://github.com/lucasew/hugo-kb
