@@ -9,6 +9,8 @@ markup:
     highliglt:
         codeFences: true
     goldmark:
+        renderer:
+            unsafe: true
         extensions:
             footnote: true
             linkify: true
