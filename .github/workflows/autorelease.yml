@@ -17,6 +17,8 @@ permissions:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -24,6 +26,11 @@ jobs:
 
       - name: Install mise
         uses: jdx/mise-action@v2
+        with:
+          version: latest
+
+      - name: Trust Config
+        run: mise trust
 
       - name: Install
         run: mise run install
