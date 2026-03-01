@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
+<head>
+    {{ partialCached "addon-admonition.html" . "" }}
+    <meta charset="UTF-8">
+    {{- partialCached "head.html" . "" }}
+    {{ with .Page.File }}
+    <meta name="mdpath" content="{{ .Path }}" />
+    {{ end }}
+    <link rel="shortcut icon" href="{{trim (partialCached "icon-url.html" .Params.icon .Params.icon) "\n" }}">
+    <title>{{ partialCached "title.html" .Page .Page.Permalink }}</title>
+
+<style>
+
+@page {
+    margin: 0
+}
+
+page-break {
+    page-break-before: always;
+}
+
+signatures {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+signatures p {
+    display: block;
+    border-top: 2px solid black;
+    flex: 1;
+    text-align: center;
+    margin: 10px;
+    white-space: nowrap;
+    max-width: 40%;
+    margin-top: 1.5rem;
+}
+
+@media not print {
+    signatures p {
+        border-top: 1px solid black;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    max-width: min(80vw, 600px);
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item-card a h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.item-card {
+    display: block;
+    float: left;
+    padding: 5px;
+}
+
+.item-card div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.item-card div p {
+    padding-left: 5px;
+}
+
+div#header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+div#header-title h1 {
+    text-align: center;
+}
+
+div#header-title .icon {
+    width: 30px;
+    height: 30px;
+    padding-right: 10px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    float: left;
+padding-right: 10px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+a {
+    background: var(--icon) no-repeat left center;
+    background-size: 20px 20px;
+}
+
+.page-link {
+    display: inline-block;
+    break-before: avoid;
+    border-bottom: 3px black solid;
+    padding: 3px;
+    text-decoration: none;
+    color: black;
+    max-width: min(80vw, 300px);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0;
+    overflow-x: hidden;
+    padding-left: 25px;
+}
+
+blockquote {
+    border-left: 5px black solid;
+    padding-left: 10px;
+}
+
+
+.filepath {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    aspect-ratio: 1/1;
+    width: 1rem;
+    height: 1rem;
+    box-sizing: content-box;
+    vertical-align: middle;
+    border: 2px solid black;
+    border-radius: .2rem;
+    display: inline-block;
+    margin: 0;
+}
+input[type="checkbox"]:checked {
+    background-color: black;
+}
+
+@media print {
+    .filepath, footer, #related-link {
+        display: none;
+    }
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+}
+
+</style>
+</head>
+
+<body data-page_id="{{ .Permalink | replaceRE "[^a-zA-Z0-9]" "-" }}" data-file_name="{{ with .File }}{{ .Path }}{{ end }}">
+    {{ partialCached "script-utils.html" . }}
+    <header>
+        <div id="header-title">
+            {{ partialCached "icon.html" .Params.icon .Params.icon }}
+            <h1>{{ partialCached "title.html" .Page .Page.Permalink }}</h1>
+        </div>
+        {{- partialCached "breadcumb.html" . .Page.Permalink -}}
+        {{ with .Params.web }}
+            <a class="page-link" id="related-link" href="{{ . }}">Link Relacionado</a>
+        {{ end }}
+        {{- block "content-header" . -}}{{ end }}
+    </header>
+    <main class="main">
+        {{ partialCached "content.html" . .Permalink }}
+    </main>
+    <footer>
+    {{- block "item-list" . -}}{{ end }}
+    {{ partialCached "backlinks.html" . .Permalink }}
+    {{ partialCached "addon-plantuml.html" . }}
+    {{ partialCached "addon-katex.html" . }}
+    {{ partialCached "addon-link-enhancer.html" . }}
+    {{ partialCached "addon-backlink-jumper.html" . }}
+    {{ partialCached "addon-copypathclipboard" . }}
+    </footer>
+    </body>
+</html>
