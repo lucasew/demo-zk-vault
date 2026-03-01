@@ -1,0 +1,18 @@
+<script>
+    (async function () {
+        try {
+            const elem = document.getElementById("header-title")
+            if (!elem) return;
+            elem.title = "Copy note path to clipboard"
+            const filename = document.body.dataset.file_name
+            elem.addEventListener('click', () => {
+                navigator.clipboard.writeText(filename).catch(e => {
+                    window.reportError(e);
+                })
+            })
+            elem.style.cursor = "copy"
+        } catch (e) {
+            window.reportError(e);
+        }
+    })()
+</script>

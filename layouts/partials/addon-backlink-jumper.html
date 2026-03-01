@@ -1,0 +1,17 @@
+<script>
+    (function() {
+        try {
+            const pageId = document.body.dataset.page_id
+            document.querySelectorAll(".page-link").forEach(n => {
+                let href = n.href
+                if (href.endsWith("/")) {
+                    href = href.slice(0, href.length - 1)
+                    href += `#${pageId}`
+                }
+                n.href = href
+            })
+        } catch (e) {
+            window.reportError(e);
+        }
+    })()
+</script>

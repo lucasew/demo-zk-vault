@@ -1,0 +1,31 @@
+<script src="https://esbuild.vercel.app/plantuml-encoder@1.4.0?format=iife&globalName=pumle"></script>
+<script>
+    window.reportError = function(e) {
+        // Centralized error reporting function
+        // You can integrate Sentry or other error reporting tools here
+        console.error("Centralized Error Reporter:", e);
+    };
+
+    function parseBlockPayload(e) {
+        try {
+            const itemRegex = /(.*):(.*)/
+            let ret = {}
+            const text = e.innerHTML
+            const lines = text.split("\n")
+            let i
+            for (i = 0; i < lines.length; i++) {
+                if (itemRegex.test(lines[i])) {
+                    const [_, key, value] = itemRegex.exec(lines[i])
+                    ret[key] = value
+                } else {
+                    break
+                }
+            }
+            ret.payload = "\n".concat(lines.slice(i))
+            return ret
+        } catch (err) {
+            window.reportError(err);
+            return { payload: "" };
+        }
+    }
+</script>
