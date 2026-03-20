@@ -6,7 +6,7 @@ relativeURLs: true
 theme: hugo-kb
 markup:
     defaultMarkdownHandler: goldmark
-    highliglt:
+    highlight:
         codeFences: true
     goldmark:
         renderer:
