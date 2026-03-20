@@ -1,0 +1,1 @@
+- 2026-03-20: Fix typos in configuration files to prevent silent failures.
