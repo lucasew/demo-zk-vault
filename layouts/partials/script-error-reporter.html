@@ -1,0 +1,9 @@
+<script>
+    window.captureError = window.captureError || function (error) {
+        if (window.Sentry && typeof window.Sentry.captureException === 'function') {
+            window.Sentry.captureException(error);
+        } else {
+            console.error('[Centralized Error Reporting]:', error);
+        }
+    };
+</script>
