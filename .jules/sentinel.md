@@ -1,0 +1,1 @@
+- 2026-03-23: Swallow errors without reporting them masks bugs and vulnerabilities downstream.
