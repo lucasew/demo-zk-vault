@@ -1,0 +1,1 @@
+- 2026-03-24: Make sure build artifacts are properly excluded from version control in .gitignore.
